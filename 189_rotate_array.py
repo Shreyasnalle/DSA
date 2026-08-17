@@ -10,3 +10,8 @@ def rotate(self, nums : list[int], k : int) -> None :
             a -= 1
             b -= 1
         nums[0] = temp
+
+def rotate(self, nums: list[int], k: int) -> None:
+    n = len(nums)
+    k %= n
+    nums[:] = nums[n - k:] + nums[:n - k]
