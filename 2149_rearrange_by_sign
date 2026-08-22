@@ -1,0 +1,20 @@
+class Solution:
+    def rearrangeArray(self, nums: list[int]) -> list[int]:
+        array_positive = []
+        array_negative = []
+        for num in nums :
+            if num >= 0 :
+                array_positive.append(num)
+            else :
+                array_negative.append(num)
+        final_array = []
+        a = 0
+        b = 0
+        for i in range(len(nums)) :
+            if i % 2 == 0 :
+                final_array.append(array_positive[a])
+                a += 1
+            else :
+                final_array.append(array_negative[b])
+                b += 1
+        return final_array
