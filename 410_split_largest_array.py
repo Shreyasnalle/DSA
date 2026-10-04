@@ -22,3 +22,29 @@ class Solution:
             else:
                 low = mid + 1
         return ans
+
+class Solution:
+    def splitArray(self, nums: list[int], k: int) -> int:
+        def subarrays_formed(k, mid) :
+            subarray_count = 1
+            count = 0
+            for num in nums :
+                if count + num <= mid :
+                    count += num
+                else :
+                    subarray_count += 1
+                    count = num
+            return subarray_count
+
+        low = max(nums)
+        high = sum(nums)
+        answer = high
+        while low <= high :
+            mid = (low + high) // 2
+            subarray = subarrays_formed(k, mid)
+            if subarray <= k :
+                answer = mid 
+                high = mid - 1
+            else :
+                low = mid + 1
+        return answer
