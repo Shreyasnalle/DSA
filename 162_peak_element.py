@@ -5,7 +5,7 @@ class Solution:
         if nums[0] > nums[1] :
             return 0
         if nums[len(nums) - 1] > nums[len(nums) - 2] :
-            return n - 1
+            return len(nums) - 1
 
         low = 1
         high = len(nums) - 2
