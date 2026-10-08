@@ -19,3 +19,20 @@ class Solution:
                 return True
         return False
 # the time complexity of this question is O(nlogm)
+
+class Solution:
+    def searchMatrix(self, matrix: list[list[int]], target: int) -> bool:
+        rows = len(matrix)
+        cols = len(matrix[0])
+        row = 0
+        col = cols - 1
+        while row < rows and col >= 0:
+            val = matrix[row][col]
+            if val == target:
+                return True
+            elif val > target:
+                col -= 1 
+            else:
+                row += 1
+        return False 
+# the time complexity of this code is O(m+n)
