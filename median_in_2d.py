@@ -20,9 +20,7 @@ def count_small_equal(matrix: list[list[int]], n: int, m: int, x: int) -> int:
 def median(matrix: list[list[int]], n: int, m: int) -> int:
     low = min(row[0] for row in matrix)
     high = max(row[m - 1] for row in matrix)
-
     req = (n * m) // 2
-
     while low <= high:
         mid = (low + high) // 2
         small_equal = count_small_equal(matrix, n, m, mid)
